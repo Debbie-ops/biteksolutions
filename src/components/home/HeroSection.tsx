@@ -19,7 +19,7 @@ const HeroSection: React.FC = () => {
           alt="Bitek Solutions Infrastructure"
           className="w-full h-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332] via-[#1a2332]/60 to-[#1a2332]/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a2332]/80 via-[#1a2332]/45 to-[#1a2332]/15 lg:bg-gradient-to-l lg:from-[#1a2332] lg:via-[#1a2332]/60 lg:to-[#1a2332]/60" />
       </div>
 
       {/* Grid Overlay Pattern */}
@@ -115,7 +115,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Hero Image Card */}
-          {/*<div
+          <div
             className={`hidden lg:block transition-all duration-1000 delay-300 ${
               loaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
             }`}
@@ -147,9 +147,9 @@ const HeroSection: React.FC = () => {
                     <p className="text-xs text-gray-500">40% avg. reduction</p>
                   </div>
                 </div>
-              </div>
+              </div>*/}
             </div>
-          </div>*/}
+          </div>
         </div>
       </div>
     </section>

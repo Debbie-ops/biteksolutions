@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { COMPANY, IMAGES } from '@/lib/constants';
-import { redirectToGmailCompose } from '@/lib/email';
+import { openGmailCompose, redirectToSiteHome } from '@/lib/email';
 import { toast } from '@/components/ui/use-toast';
 import {
   Phone,
@@ -65,11 +65,21 @@ const ContactPage: React.FC = () => {
       'Submitted from the website contact form.',
     ].join('\n');
 
-    redirectToGmailCompose({
+    const openedInNewTab = openGmailCompose({
       to: COMPANY.email,
       subject: `Website Contact Form - ${subjectLabel} - ${form.name}`,
       body: emailBody,
     });
+
+    if (!openedInNewTab) {
+      toast({
+        title: 'Could not open Gmail',
+        description: 'Please allow pop-ups for this site and try again.',
+        variant: 'destructive',
+      });
+      return;
+    }
+    redirectToSiteHome();
   };
 
   return (

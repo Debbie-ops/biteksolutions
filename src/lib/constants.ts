@@ -7,7 +7,7 @@ export const COMPANY = {
   address: '12006 Simon Mwansa Kapwepwe Road',
   contact: 'Mr. Noddy Vlahakis',
   phone: '+260 977289299',
-  email: 'debbiemiti1@gmail.com',
+  email: 'info@biteksolutions.org',
   hours: '08:00 – 17:00',
   mission: 'To provide dependable ICT infrastructure and renewable energy solutions that improve operational efficiency for businesses and homes.',
   vision: "To become one of Zambia's most trusted ICT and renewable energy service providers.",

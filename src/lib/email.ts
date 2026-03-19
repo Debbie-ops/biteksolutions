@@ -6,6 +6,8 @@ type GmailComposeOptions = {
   bcc?: string;
 };
 
+const PRODUCTION_HOME_URL = 'https://biteksolutions.org/';
+
 export const buildGmailComposeUrl = ({
   to,
   subject,
@@ -47,10 +49,9 @@ export const openGmailCompose = (options: GmailComposeOptions) => {
   }
 
   const composeUrl = buildGmailComposeUrl(options);
-  const popup = window.open('', '_blank', 'noopener,noreferrer');
+  const popup = window.open(composeUrl, '_blank', 'noopener,noreferrer');
 
   if (popup) {
-    popup.location.href = composeUrl;
     return true;
   }
 
@@ -60,4 +61,23 @@ export const openGmailCompose = (options: GmailComposeOptions) => {
   link.rel = 'noopener noreferrer';
   link.click();
   return true;
+};
+
+export const getSiteHomeUrl = () => {
+  if (typeof window === 'undefined') {
+    return PRODUCTION_HOME_URL;
+  }
+
+  const isLocalHost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+  return isLocalHost ? `${window.location.origin}/` : PRODUCTION_HOME_URL;
+};
+
+export const redirectToSiteHome = () => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  window.setTimeout(() => {
+    window.location.replace(getSiteHomeUrl());
+  }, 150);
 };
