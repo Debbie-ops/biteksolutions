@@ -233,9 +233,9 @@ export const PROJECTS = [
 ];
 
 export const STATS = [
-  { value: 150, suffix: '+', label: 'Projects Completed' },
+  { value: 20, suffix: '+', label: 'Projects Completed' },
   { value: 99.9, suffix: '%', label: 'Uptime Guarantee' },
-  { value: 500, suffix: '+', label: 'Clients Served' },
+  { value: 20, suffix: '+', label: 'Clients Served' },
   { value: 24, suffix: '/7', label: 'Technical Support' },
 ];
 
